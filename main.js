@@ -3,7 +3,7 @@ let newsList = [];//여러번 쓰일 것이므로 전역변수로 할당해주�
 //https://newsapi.org/v2/top-headlines
 //https://timesnews-site.netlify.app//top-headlines
 const getLatestNews = async () => {
-	const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
+	const url = new URL(`https://timesnews-site.netlify.app//top-headlines?country=us&apiKey=${API_KEY}`);
 
 	const response = await fetch(url);//await을 포함하는 것은 비동기 함수이다.
 	const data = await response.json();//객체 형식으로 주고받기 편하므로 json을 사용
