@@ -1,5 +1,7 @@
 const API_KEY = `452a4ea137fa426281779a008fa281d0`;
 let newsList = [];//여러번 쓰일 것이므로 전역변수로 할당해주는 것임
+const menus = document.querySelectorAll(".menus button");
+menus.forEach((menu) => menu.addEventListener("click", (Event) => getNewsByCategory(Event)));
 //https://newsapi.org/v2/top-headlines
 //https://timesnews-site.netlify.app//top-headlines
 const getLatestNews = async () => {
@@ -11,6 +13,32 @@ const getLatestNews = async () => {
 	render();
 	console.log("ddd", newsList);
 };
+
+const getNewsByCategory = async (Event) => {
+	const category = Event.target.textContent.toLowerCase();
+	console.log("category", category);
+	const url = new URL(`https://timesnews-site.netlify.app//top-headlines?country=us&category=${category}&apiKey=${API_KEY}`)
+	const response = await fetch(url);
+	const data = await response.json();
+	console.log("ddd", data);
+	newsList = data.articles;
+	render();
+};
+//searchNews가 getNewsByKeyword임
+const searchNews = async () => {
+	const keyword = document.getElementById("search-input").value;
+	console.log("keyword", keyword);
+	const url = new URL(`https://timesnews-site.netlify.app//top-headlines?country=us&q=${keyword}&apiKey=${API_KEY}`);
+
+	const response = await fetch(url);
+	const data = await response.json();
+	console.log("keyword data", data);
+	newsList = data.articles;
+	render();
+};
+
+
+
 const render = () => {
 	const newsHTML = newsList.map((news) => `		<div class="row news">
 	<div class="col-lg-4">
@@ -49,6 +77,11 @@ const openSearchBox = () => {
 	}
 };
 openSearchBox();
+
+//1.버튼들에 클릭이벤트 주기
+//2.카테고리별 뉴스 가져오기
+//3.뉴스를 ui에 보여주기
+
 
 
 
