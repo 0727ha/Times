@@ -30,14 +30,15 @@ const render = () => {
 
 getLatestNews();
 
-const openNav = () => {
+/* Set the width of the side navigation to 250px */
+function openNav() {
 	document.getElementById("mySidenav").style.width = "250px";
-};
-openNav();
-const closeNav = () => {
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
 	document.getElementById("mySidenav").style.width = "0";
-};
-closeNav();
+}
 
 const openSearchBox = () => {
 	let inputArea = document.getElementById("input-area");
@@ -48,3 +49,8 @@ const openSearchBox = () => {
 	}
 };
 openSearchBox();
+
+
+
+
+

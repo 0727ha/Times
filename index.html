@@ -11,30 +11,26 @@
 </head>
 
 <body>
-	<div class="side-menu" id="mySidenav">
-		<button class="closebtn" onclick="closeNav()">&times;</button>
-		<div class="side-menu-list" id="menu-list">
-			<button>Sport</button>
-			<button>Tech</button>
-			<button>World</button>
-			<button>Finance</button>
-			<button>Politics</button>
-			<button>Business</button>
-			<button>Economics</button>
-			<button>Entertainment</button>
-			<button>Beauty</button>
-			<button>Travel</button>
-			<button>Music</button>
-			<button>Food</button>
-			<button>Science</button>
-			<button>Gaming</button>
-			<button>Energy</button>
-		</div>
-
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="#">Sport</a>
+		<a href="#">Tech</a>
+		<a href="#">World</a>
+		<a href="#">Finance</a>
+		<a href="#">Politics</a>
+		<a href="#">Business</a>
+		<a href="#">Economics</a>
+		<a href="#">Entertainment</a>
+		<a href="#">Beauty</a>
+		<a href="#">Travel</a>
+		<a href="#">Music</a>
+		<a href="#">Food</a>
+		<a href="#">Science</a>
+		<a href="#">Gaming</a>
+		<a href="#">Energy</a>
 	</div>
-	<!-- 생략 -->
-	<!-- 햄버거 버튼 추가  -->
-	<i class="fas fa-bars hide icon-button" onclick="openNav()"></i>
+
+	<span onclick="openNav()">햄버거 메뉴(추후수정예정)</span>
 
 	<i class="fas fa-search icon-button" onclick="openSearchBox()"></i>
 	<span id="input-area">
