@@ -3,7 +3,7 @@ let newsList = [];//여러번 쓰일 것이므로 전역변수로 할당해주�
 const menus = document.querySelectorAll(".menus button");
 menus.forEach((menu) => menu.addEventListener("click", (Event) => getNewsByCategory(Event)));
 
-let url = new URL(`https://timesnews-site.netlify.app//top-headlines?country=us&apiKey=${API_KEY}`);
+let url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
 let totalResults = 0;
 let page = 1;
 const pageSize = 10;
