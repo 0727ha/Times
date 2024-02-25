@@ -5,7 +5,7 @@ menus.forEach((menu) => menu.addEventListener("click", (Event) => getNewsByCateg
 
 //https://newsapi.org/v2/top-headlines(제출용)
 //https://timesnews-site.netlify.app//top-headlines
-let url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
+let url = new URL(`https://timesnews-site.netlify.app//top-headlines?country=us&apiKey=${API_KEY}`);
 let totalResults = 0;
 let page = 1;
 const pageSize = 10;
@@ -22,6 +22,7 @@ const getNews = async () => {
 			if (data.articles.length === 0) {
 				throw new Error("no result for this search");
 			}
+
 			newsList = data.articles;
 			totalResults = data.totalResults;
 			render();
@@ -33,7 +34,7 @@ const getNews = async () => {
 	} catch (error) {
 		errorRender(error.message);
 	}
-
+	render();
 };
 
 const getLatestNews = async () => {
@@ -114,15 +115,6 @@ const paginationRender = () => {
 
 
 
-	/*<nav aria-label="Page navigation example">
-	  <ul class="pagination">
-		<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-		<li class="page-item"><a class="page-link" href="#">1</a></li>
-		<li class="page-item"><a class="page-link" href="#">2</a></li>
-		<li class="page-item"><a class="page-link" href="#">3</a></li>
-		<li class="page-item"><a class="page-link" href="#">Next</a></li>
-	  </ul>
-	</nav>*/
 
 };
 
